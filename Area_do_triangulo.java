@@ -9,8 +9,8 @@ public class Area_do_triangulo {
     public static void main(String[] args) {
         Scanner leitor = new Scanner (System.in);
         
-        double base;
-        double altura;
+        double base = 0;
+        double altura = 0;
         
         
         System.out.println("Digite a área do triangulo com base X " );

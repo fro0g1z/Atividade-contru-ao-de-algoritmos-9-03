@@ -9,7 +9,7 @@ public class Algoritmo_Para_Calcular_a_Area_De_Um_Círculo {
     public static void main(String[] args) {
         Scanner leitor = new Scanner (System.in);
         
-        double raio;
+        double raio = 0;
         double area;
         double pi = 3.14;
         

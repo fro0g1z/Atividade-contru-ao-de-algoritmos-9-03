@@ -9,7 +9,7 @@ public class Calcular_Media_3_Valores {
     public static void main(String[] args) {
         Scanner leitor = new Scanner (System.in);
         
-        double soma = 0;
+        double soma;
         double media;
         
         System.out.println("Digite o primeiro numero: ");

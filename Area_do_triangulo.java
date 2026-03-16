@@ -21,7 +21,7 @@ public class Area_do_triangulo {
         
         double area = (base * altura) / 2;
         
-        System.out.println("A área do triangulo com base X e altura Y é" + base + "e altura" + altura + "e :" + area);
+        System.out.println("A área do triangulo com base X é" + base + "e altura" + altura + "e :" + area);
                 
     
     }

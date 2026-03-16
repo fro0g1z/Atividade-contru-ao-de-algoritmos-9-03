@@ -15,7 +15,7 @@ public class Algoritmo_Para_Calcular_a_Area_De_Um_Círculo {
         
         System.out.println("vamos calcular a area de um circulo!");
         System.out.println("Qual o raio do circulo?");
-         raio = leitor.nextDouble();
+         raio = raio + leitor.nextDouble();
         
         System.out.println("Considere pi como: 3.14");
         

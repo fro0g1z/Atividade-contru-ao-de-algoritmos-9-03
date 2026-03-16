@@ -18,7 +18,6 @@ public class Algoritmo_Para_Calcular_a_Area_De_Um_Círculo {
          raio = leitor.nextDouble();
         
         System.out.println("Considere pi como: 3.14");
-        pi = 3.14;
         
         area = pi * raio * raio;
         

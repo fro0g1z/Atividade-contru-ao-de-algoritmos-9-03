@@ -1,0 +1,76 @@
+
+package operadoresbitwise_;
+
+import java.util.Scanner;
+ 
+public class OperadoresBitWise_ {
+
+    
+    public static void main(String[] args) {
+       Scanner scanner = new Scanner(System.in);
+
+        int a = 0; 
+        int b = 0;
+        int opcao = 0;
+        int resultado = 0;
+
+        System.out.println(" == CALCULADORA BITWISE ==");
+
+        System.out.print("Digite o valor de A: ");
+        a = scanner.nextInt();
+
+        System.out.print("Digite o valor de B: ");
+        b = scanner.nextInt();
+
+        System.out.println("Escolha a operação:");
+        System.out.println("1 - AND (&)");
+        System.out.println("2 - OR (|)");
+        System.out.println("3 - XOR (^)");
+        System.out.println("4 - NOT (~A)");
+        System.out.println("5 - Shift Left (A << 1)");
+        System.out.println("6 - Shift Right (A >> 1)");
+
+        System.out.print("Opcao: ");
+        opcao = scanner.nextInt();
+
+
+        switch (opcao) {
+            case 1:
+                resultado = a & b;
+                System.out.println("Resultado (AND): " + resultado);
+                break;
+
+            case 2:
+                resultado = a | b;
+                System.out.println("Resultado (OR): " + resultado);
+                break;
+
+            case 3:
+                resultado = a ^ b;
+                System.out.println("Resultado (XOR): " + resultado);
+                break;
+
+            case 4:
+                resultado = ~a;
+                System.out.println("Resultado (NOT de A): " + resultado);
+                break;
+
+            case 5:
+                resultado = a << 1;
+                System.out.println("Resultado (Shift Left): " + resultado);
+                break;
+
+            case 6:
+                resultado = a >> 1;
+                System.out.println("Resultado (Shift Right): " + resultado);
+                break;
+
+            default:
+                System.out.println("Opção inválida!");
+        }
+
+        scanner.close();
+    }
+ }
+    
+

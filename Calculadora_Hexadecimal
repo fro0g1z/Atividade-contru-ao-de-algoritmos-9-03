@@ -1,0 +1,82 @@
+
+package calculadora_hexadecimal;
+
+import java.util.Scanner;
+
+public class Calculadora_Hexadecimal {
+
+   
+    public static void main(String[] args) {
+        
+        Scanner sc = new Scanner(System.in);
+
+        System.out.println("1 - Decimal para Hexadecimal");
+        System.out.println("2 - Hexadecimal para Decimal");
+
+        int opcao = sc.nextInt();
+
+        // DECIMAL -> HEXA
+        if (opcao == 1) {
+
+            System.out.print("Digite um numero decimal: ");
+            int numero = sc.nextInt();
+
+            char[] tabela = {'0','1','2','3','4','5','6','7','8','9','A','B','C','D','E','F'};
+
+            String resultado = "";
+
+            while (numero > 0) {
+
+                int resto = numero % 16;
+
+                resultado = tabela[resto] + resultado;
+
+                numero = numero / 16;
+            }
+
+            System.out.println("Resultado: " + resultado);
+
+        }
+
+        // HEXA -> DECIMAL
+        else if (opcao == 2) {
+
+            System.out.print("Digite um hexadecimal: ");
+            String hexa = sc.next();
+
+            int decimal = 0;
+
+            for (int i = 0; i < hexa.length(); i++) {
+
+                char letra = hexa.charAt(i);
+
+                int valor = 0;
+
+                if (letra == 'A' || letra == 'a')
+                    valor = 10;
+                else if (letra == 'B' || letra == 'b')
+                    valor = 11;
+                else if (letra == 'C' || letra == 'c')
+                    valor = 12;
+                else if (letra == 'D' || letra == 'd')
+                    valor = 13;
+                else if (letra == 'E' || letra == 'e')
+                    valor = 14;
+                else if (letra == 'F' || letra == 'f')
+                    valor = 15;
+                else
+                    valor = letra - '0';
+
+                decimal = decimal * 16 + valor;
+            }
+
+            System.out.println("Resultado: " + decimal);
+        }
+
+        else {
+            System.out.println("Opcao invalida!");
+        }
+
+        sc.close();
+    }
+}

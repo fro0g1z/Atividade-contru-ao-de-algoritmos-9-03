@@ -1,13 +1,16 @@
-package calculadora_bitwise;
+
+package calculadora_hexadecimal;
 
 import java.util.Scanner;
 
-public class Calculadora_Bitwise {
+public class Calculadora_Hexadecimal {
 
+   
     public static void main(String[] args) {
-
+        
         Scanner sc = new Scanner(System.in);
 
+        // mostra as opcoes na tela
         System.out.println("1 - Decimal para Binario");
         System.out.println("2 - AND (&)");
         System.out.println("3 - OR (|)");
@@ -16,114 +19,163 @@ public class Calculadora_Bitwise {
         System.out.println("6 - SHIFT LEFT (<<)");
         System.out.println("7 - SHIFT RIGHT (>>)");
 
+        // guarda a opcao escolhida pelo usuario
         int opcao = sc.nextInt();
 
+        
         // DECIMAL -> BINARIO
+       
         if (opcao == 1) {
 
+            // pede um numero decimal
             System.out.print("Digite um numero decimal: ");
+
+            // guarda o numero digitado
             int numero = sc.nextInt();
 
+            // string vazia para guardar o binario final
             String binario = "";
 
+            // enquanto o numero for maior que 0
             while (numero > 0) {
 
+                // pega o resto da divisao por 2
                 int resto = numero % 2;
 
+                // junta o resto no começo da string binario
                 binario = resto + binario;
 
+                // divide o numero por 2 para continuar a conversao
                 numero = numero / 2;
             }
 
+            // mostra o resultado final
             System.out.println("Binario: " + binario);
         }
 
-        // AND
+        
+        // AND (&)
+       
         else if (opcao == 2) {
 
+            // pede o primeiro numero
             System.out.print("Digite o primeiro numero: ");
             int a = sc.nextInt();
 
+            // pede o segundo numero
             System.out.print("Digite o segundo numero: ");
             int b = sc.nextInt();
 
+            // faz a operacao AND
             int resultado = a & b;
 
+            // mostra o resultado
             System.out.println("Resultado: " + resultado);
         }
 
-        // OR
+        
+        // OR (|)
+      
         else if (opcao == 3) {
 
+            // pede o primeiro numero
             System.out.print("Digite o primeiro numero: ");
             int a = sc.nextInt();
 
+            // pede o segundo numero
             System.out.print("Digite o segundo numero: ");
             int b = sc.nextInt();
 
+            // faz a operacao OR
             int resultado = a | b;
 
+            // mostra o resultado
             System.out.println("Resultado: " + resultado);
         }
 
-        // XOR
+       
+        // XOR (^)
+      
         else if (opcao == 4) {
 
+            // pede o primeiro numero
             System.out.print("Digite o primeiro numero: ");
             int a = sc.nextInt();
 
+            // pede o segundo numero
             System.out.print("Digite o segundo numero: ");
             int b = sc.nextInt();
 
+            // faz a operacao XOR
             int resultado = a ^ b;
 
+            // mostra o resultado
             System.out.println("Resultado: " + resultado);
         }
 
-        // NOT
+      
+        // NOT (~)
+       
         else if (opcao == 5) {
 
+            // pede um numero
             System.out.print("Digite um numero: ");
             int a = sc.nextInt();
 
+            // faz a operacao NOT
             int resultado = ~a;
 
+            // mostra o resultado
             System.out.println("Resultado: " + resultado);
         }
 
-        // SHIFT LEFT
+        
+        // SHIFT LEFT (<<)
+        
         else if (opcao == 6) {
 
+            // pede um numero
             System.out.print("Digite um numero: ");
             int a = sc.nextInt();
 
+            // pede quantas casas deseja mover
             System.out.print("Quantas casas deseja mover: ");
             int casas = sc.nextInt();
 
+            // move os bits para a esquerda
             int resultado = a << casas;
 
+            // mostra o resultado
             System.out.println("Resultado: " + resultado);
         }
 
-        // SHIFT RIGHT
+        
+        // SHIFT RIGHT (>>)
+        
         else if (opcao == 7) {
 
+            // pede um numero
             System.out.print("Digite um numero: ");
             int a = sc.nextInt();
 
+            // pede quantas casas deseja mover
             System.out.print("Quantas casas deseja mover: ");
             int casas = sc.nextInt();
 
+            // move os bits para a direita
             int resultado = a >> casas;
 
+            // mostra o resultado
             System.out.println("Resultado: " + resultado);
         }
 
+        // se o usuario digitar uma opcao invalida
         else {
 
             System.out.println("Opcao invalida!");
         }
 
+        // fecha o Scanner
         sc.close();
     }
 }

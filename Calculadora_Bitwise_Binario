@@ -1,0 +1,30 @@
+package calculadora_bitwise;
+
+import java.util.Scanner;
+
+public class Calculadora_Bitwise {
+
+   
+    public static void main(String[] args) {
+        
+        Scanner sc = new Scanner(System.in);
+
+        System.out.print("Digite um numero decimal: ");
+        int numero = sc.nextInt();
+
+        String binario = "";
+
+        while (numero > 0) {
+
+            int resto = numero % 2;
+
+            binario = resto + binario;
+
+            numero = numero / 2;
+        }
+
+        System.out.println("Binario: " + binario);
+
+        sc.close();
+    }
+}

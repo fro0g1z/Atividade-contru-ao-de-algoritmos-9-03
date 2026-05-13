@@ -8,49 +8,72 @@ public class Calculadora_Hexadecimal {
    
     public static void main(String[] args) {
         
-        Scanner sc = new Scanner(System.in);
-
+        //criei um scanner para receber o valor que o usario deseja
+        Scanner sc = new Scanner(System.in); 
+        
+        //imprimi duas opcoes para que o usuario possa escolher
         System.out.println("1 - Decimal para Hexadecimal");
-        System.out.println("2 - Hexadecimal para Decimal");
-
+        System.out.println("2 - Hexadecimal para Decimal"); 
+        
+        
+        //aqui vai guardar o valor que o usuario escolher na variavel opcao
         int opcao = sc.nextInt();
 
         // DECIMAL -> HEXA
+        
+        /*aqui se a pessoa digitar 1 na variavel opcao, ela vai receber uma mensagem 
+        "digite um numero decimal" e esse numero vai ser guardado na variavel numero*/
+        
         if (opcao == 1) {
 
             System.out.print("Digite um numero decimal: ");
             int numero = sc.nextInt();
-
+            
+            
+            //Aqui criei uma tabela char, para os numero hexadecimais de 0 a F
             char[] tabela = {'0','1','2','3','4','5','6','7','8','9','A','B','C','D','E','F'};
-
+            
+            //Criei uma string vazia com o nome de resultado que vai guardar o resultado final
             String resultado = "";
-
+            
+            
+            /*Criei uma estrutura de repeticao que vai repetir tudo entre chaves 
+            enquanto a variavel "numero" for maior que zero */
             while (numero > 0) {
 
-                int resto = numero % 16;
+                int resto = numero % 16; //criei uma variavel resto e coloquei pra lhe atribuir o valor da divisao entre a viriavel numero % 16
 
-                resultado = tabela[resto] + resultado;
+                resultado = tabela[resto] + resultado; //aqui ele vai pegar o valor da tabela hexadecimal e juntar com a String resultado
 
-                numero = numero / 16;
+                numero = numero / 16; //aqui ele vai continuar dividindo o número por 16 até o número chegar em 0
             }
 
-            System.out.println("Resultado: " + resultado);
+            System.out.println("Resultado: " + resultado); //aqui ele vai mostrar o resultado final da conversão hexadecima
 
         }
 
         // HEXA -> DECIMAL
+        
+         /* aqui a mesma coisa, se a pessoa digitar 2 vai aparecer a mensagem pra 
+        "digitar um valor hexadecimal" e esse valor vai ser guardado na string hexa */    
         else if (opcao == 2) {
 
             System.out.print("Digite um hexadecimal: ");
             String hexa = sc.next();
 
-            int decimal = 0;
-
+            int decimal = 0; //aqui criei uma variavel decimal, para mostrar o valor final em decimal
+            
+            
+            //aqui criei uma estrutura de repeticao que vai percorrer cada caracter digitado no hexadecimal
             for (int i = 0; i < hexa.length(); i++) {
 
-                char letra = hexa.charAt(i);
+                char letra = hexa.charAt(i); //aqui ele vai pegar uma letra por vez do hexadecimal e guardar na variavel letra
 
-                int valor = 0;
+                int valor = 0; //aqui criei uma variavel valor que vai guardar o valor decimal correspondente da letra hexadecimal
+                
+                
+                /*aqui se a letra for A ou a, o valor vai ser 10, isso para todas as letras ate o F 
+                e vai atribuir um valor para cada letra com a variavel valor*/
 
                 if (letra == 'A' || letra == 'a')
                     valor = 10;
@@ -65,9 +88,11 @@ public class Calculadora_Hexadecimal {
                 else if (letra == 'F' || letra == 'f')
                     valor = 15;
                 else
-                    valor = letra - '0';
-
-                decimal = decimal * 16 + valor;
+                    valor = letra - '0'; //aqui se nao for nenhuma letra de A até F, ele vai transformar o caractere numerico em número decimal
+                
+                /* aqui ele vai calcular o valor decimal do hexadecimal
+                multiplicando o valor atual por 16 e somando o novo valor */
+                decimal = decimal * 16 + valor; 
             }
 
             System.out.println("Resultado: " + decimal);

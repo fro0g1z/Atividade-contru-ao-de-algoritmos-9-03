@@ -4,26 +4,125 @@ import java.util.Scanner;
 
 public class Calculadora_Bitwise {
 
-   
     public static void main(String[] args) {
-        
+
         Scanner sc = new Scanner(System.in);
 
-        System.out.print("Digite um numero decimal: ");
-        int numero = sc.nextInt();
+        System.out.println("1 - Decimal para Binario");
+        System.out.println("2 - AND (&)");
+        System.out.println("3 - OR (|)");
+        System.out.println("4 - XOR (^)");
+        System.out.println("5 - NOT (~)");
+        System.out.println("6 - SHIFT LEFT (<<)");
+        System.out.println("7 - SHIFT RIGHT (>>)");
 
-        String binario = "";
+        int opcao = sc.nextInt();
 
-        while (numero > 0) {
+        // DECIMAL -> BINARIO
+        if (opcao == 1) {
 
-            int resto = numero % 2;
+            System.out.print("Digite um numero decimal: ");
+            int numero = sc.nextInt();
 
-            binario = resto + binario;
+            String binario = "";
 
-            numero = numero / 2;
+            while (numero > 0) {
+
+                int resto = numero % 2;
+
+                binario = resto + binario;
+
+                numero = numero / 2;
+            }
+
+            System.out.println("Binario: " + binario);
         }
 
-        System.out.println("Binario: " + binario);
+        // AND
+        else if (opcao == 2) {
+
+            System.out.print("Digite o primeiro numero: ");
+            int a = sc.nextInt();
+
+            System.out.print("Digite o segundo numero: ");
+            int b = sc.nextInt();
+
+            int resultado = a & b;
+
+            System.out.println("Resultado: " + resultado);
+        }
+
+        // OR
+        else if (opcao == 3) {
+
+            System.out.print("Digite o primeiro numero: ");
+            int a = sc.nextInt();
+
+            System.out.print("Digite o segundo numero: ");
+            int b = sc.nextInt();
+
+            int resultado = a | b;
+
+            System.out.println("Resultado: " + resultado);
+        }
+
+        // XOR
+        else if (opcao == 4) {
+
+            System.out.print("Digite o primeiro numero: ");
+            int a = sc.nextInt();
+
+            System.out.print("Digite o segundo numero: ");
+            int b = sc.nextInt();
+
+            int resultado = a ^ b;
+
+            System.out.println("Resultado: " + resultado);
+        }
+
+        // NOT
+        else if (opcao == 5) {
+
+            System.out.print("Digite um numero: ");
+            int a = sc.nextInt();
+
+            int resultado = ~a;
+
+            System.out.println("Resultado: " + resultado);
+        }
+
+        // SHIFT LEFT
+        else if (opcao == 6) {
+
+            System.out.print("Digite um numero: ");
+            int a = sc.nextInt();
+
+            System.out.print("Quantas casas deseja mover: ");
+            int casas = sc.nextInt();
+
+            int resultado = a << casas;
+
+            System.out.println("Resultado: " + resultado);
+        }
+
+        // SHIFT RIGHT
+        else if (opcao == 7) {
+
+            System.out.print("Digite um numero: ");
+            int a = sc.nextInt();
+
+            System.out.print("Quantas casas deseja mover: ");
+            int casas = sc.nextInt();
+
+            int resultado = a >> casas;
+
+            System.out.println("Resultado: " + resultado);
+        }
+
+        else {
+
+            System.out.println("Opcao invalida!");
+        }
 
         sc.close();
     }
